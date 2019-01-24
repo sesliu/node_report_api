@@ -1,0 +1,18 @@
+{
+  "name": "nodeReport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "ULISSES-CEDESRJ",
+  "license": "ISC",
+  "dependencies": {
+    "base64topdf": "^1.1.8",
+    "express": "^4.16.4",
+    "file-base64": "^1.0.0",
+    "pdfkit": "^0.8.3"
+  }
+}
