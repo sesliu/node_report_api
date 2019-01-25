@@ -1,7 +1,8 @@
 var express = require('express');
 // criando rotas
 var router = express.Router();
-
+var fs = require('fs');
+var porta = 3000;
 var base64 = require('file-base64');
 var bodyParser = require('body-parser');
 var Pdf = require('./reports/Pdf'); // arquivo onde está a classe da geração do PDF
@@ -36,9 +37,16 @@ app.route('/', function (req, res) {
 // método do relatório do tkn
 app.post('/relatoriotkn', function (req, res) {
 
-	pdf.gerarPDF(req.body)
+	/*
+		request:
+		    requisicao,
+            validade,
+            controle	
+
+	*/
+
+	let arquivo = pdf.gerarProtocoloTKNPDF(req.body)
 	let caminho = __dirname + '/public/pdf/';
-	let arquivo = 'output.pdf';
 
 	setTimeout(() => {
 
@@ -48,13 +56,12 @@ app.post('/relatoriotkn', function (req, res) {
 
 			res.json(retornojson);
 		});
-
+		fs.unlinkSync(caminho + arquivo);
 	}, 1000)
-
+	
 });
 
-
 // iniciar o server
-app.listen('3000', function () {
+app.listen(porta, function () {
 	console.log('Servidor iniciado e executando... Vá até o seu browser e digite http://localhost:3000');
 });
