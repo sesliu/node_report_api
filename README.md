@@ -8,7 +8,7 @@ To generate pdf, the PdfKit nodeJs's lib has been used
 
 ## Instructions:
 
-execute in root directory: npm start
+execute in root directory: **npm start**
 
 The object to request must be this format:
 
