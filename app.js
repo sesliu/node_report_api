@@ -38,7 +38,8 @@ app.route('/', function (req, res) {
 
 
 app.get('/test', function(req, res){
-	res.send('aqui');
+	let aqui = 'aqui'
+	res.json(aqui);
 });
 
 app.post('/relatoriotkn', function (req, res) {
