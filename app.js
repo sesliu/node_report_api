@@ -2,7 +2,7 @@ var express = require('express');
 // criando rotas
 var router = express.Router();
 var fs = require('fs');
-var porta = 3000;
+var porta = process.env.PORT || 3000;
 var base64 = require('file-base64');
 var bodyParser = require('body-parser');
 var Pdf = require('./reports/Pdf'); // arquivo onde está a classe da geração do PDF
