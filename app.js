@@ -35,6 +35,12 @@ app.route('/', function (req, res) {
 });
 
 // método do relatório do tkn
+
+
+app.get('/test', function(req, res){
+	res.send('aqui');
+});
+
 app.post('/relatoriotkn', function (req, res) {
 
 	/*
